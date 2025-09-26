@@ -34,11 +34,12 @@ const searchRecipes = async (params) => {
   } else {
     recipeWrapper.innerHTML = "";
     for (const item of selectedRecipes) {
+      console.log(item);
       recipeWrapper.innerHTML += `
         <h3>${item.description}</h3> 
         <p> ${item.name}</p>
         <p> ${item.prep_time} min</p>
-        <a href="#" class="recepie">Voir la recette</a>
+        <a href="/pages/recipe.html?id=${item.id}" class="recepie">Voir la recette</a>
         <a href="#" class="cooked">Cuisiné</a>
         `;
     }
